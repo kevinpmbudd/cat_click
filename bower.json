@@ -1,0 +1,22 @@
+{
+  "name": "cat_click",
+  "homepage": "https://github.com/kevinpmbudd/kevinpmbudd.github.io",
+  "authors": [
+    "Kevin Budd <kevin@kevinbudd.com>"
+  ],
+  "description": "How Many Times Did you Click the Cat",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
