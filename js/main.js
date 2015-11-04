@@ -1,23 +1,3 @@
-// var count = 0;
-// var count2 = 0;
-// var name = "smeow";
-// var name2 = "feelinus";
-
-// $('#name').text(name);
-// $('#name2').text(name2);
-
-// $('#kitty').click(function(e) {
-//   count ++;
-//   console.log(count);
-//   $('#count').text('You have clicked me ' + count + ' times');
-// });
-
-// $('#kitty2').click(function(e) {
-//   count2 ++;
-//   console.log(count2);
-//   $('#count2').text('You have clicked me ' + count2 + ' times');
-// });
-
 var cat1 = {
 	name: "smeow",
 	count: 0,
@@ -61,27 +41,27 @@ for (var i = 0; i < cats.length; i++) {
     // ... and when we click, alert the value of `num`
     elem.addEventListener('click', (function(catCopy) {
         return function() {
-            // alert(catCopy.name);
-            $('#selectedCat').innerHTML ='';
+            $('#selectedCat').empty();
+
             var name = document.createElement('p');
             name.textContent = catCopy.name;
             $('#selectedCat').append(name);
+
             $('#selectedCat').append($('<img>', {
-            	src : catCopy.image
+            	src: catCopy.image
             }));
+
             var click_count = document.createElement('p');
             click_count.textContent = catCopy.count;
-						$('#selectedCat').append(click_count);
-						$('#selectedCat').click(function(e) {
-							e.count ++;
-							console.log(e.count);
-							click_count.textContent = e.count;
-						})(e);
+            $('#selectedCat').append(click_count);
 
+						$('img').click(function() {
+							catCopy.count ++;
+							click_count.textContent = catCopy.count;
+						});
 
         };
     })(cat));
 
     $('#list').append(elem);
-    // document.body.appendChild(elem);
 };
